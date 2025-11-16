@@ -33,13 +33,9 @@ function createAppResult() {
             const ansText = document.createElement('p')
             ansText.textContent = ans.text + ' - ' + ans.explantion
             if (ans.correct) {
-                ansText.style.backgroundColor = '#28a745';
-                ansText.style.color = '#fff';
                 ansText.classList.add('correct')
             }
             if (ansIndex === answer.indexAns && !ans.correct) {
-                ansText.style.backgroundColor = '#dc3545';
-                ansText.style.color = '#fff';
                 ansText.classList.add('uncorrect')
             }
             divQuestion.append(ansText)
