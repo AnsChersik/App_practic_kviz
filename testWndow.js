@@ -54,8 +54,8 @@ let testsArray = [
         answers: [
             { text: 'Километры', correct: false, explantion: 'Неверно' },
             { text: 'Метры', correct: false, explantion: 'Неверно' },
-            { text: 'Квадратные километры', correct: true, explantion: 'Верно' },
-            { text: 'Световые года', correct: false, explantion: 'Неверно' },
+            { text: 'Квадратные километры', correct: false, explantion: 'Неверно' },
+            { text: 'Световые года', correct: true, explantion: 'Верно' },
         ],
         explanation: 'В коссмосе расстояние измеряется в световых годах',
     },
@@ -79,9 +79,8 @@ function randomQuestion(array) {
     }
 }
 
-
 function creatwQuestion() {
-    
+
     answersConteiner.innerHTML = ''
     ansewerIndex = null
 
@@ -93,25 +92,27 @@ function creatwQuestion() {
         answers.push(answer)
     })
 
-    randomQuestion(answers)
-
     answers.forEach((answer, index) => {
         const label = document.createElement('label')
         const radio = document.createElement('input')
+        const span = document.createElement('span')
+        span.textContent = answer.text
         radio.type = 'radio'
+        radio.value = index
         radio.name = 'answer'
         label.classList.add('label')
 
         radio.addEventListener('change', () => {
             ansewerIndex = index
             questionButton.disabled = false
+            questionButton.classList.remove('buttonPassiv')
             questionButton.classList.add('buttonActiv')
         })
 
-        label.textContent = answer.text
         label.append(radio)
+        label.append(span)
         answersConteiner.append(label)
-    })
+    })    
 
     questionButton.disabled = true
     questionButton.classList.add('buttonPassiv')
@@ -125,10 +126,14 @@ function creatwQuestion() {
 questionButton.addEventListener('click', () => {
     if (ansewerIndex === null) return
 
+    const currentQuestion = newArrayQuestion[indexQuestion]
     const objectAns = {
         question: newArrayQuestion[indexQuestion],
         indexAns: ansewerIndex
     }
+
+    console.log(objectAns);
+    
     arrayAnswer.push(objectAns)
 
     if (indexQuestion == newArrayQuestion.length - 1) {
@@ -142,10 +147,13 @@ questionButton.addEventListener('click', () => {
 
 function createAppQuiz() {
     const userName = localStorage.getItem('username') || 'Анонимный пользователь'
+
     newArrayQuestion = []
     testsArray.forEach(question => {
+        randomQuestion(question.answers)
         newArrayQuestion.push(question)
     })
+    randomQuestion(newArrayQuestion)
     indexQuestion = 0
     arrayAnswer = []
     creatwQuestion()
