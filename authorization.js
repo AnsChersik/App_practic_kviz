@@ -29,18 +29,6 @@ function createAuthorizationForm() {
     }
 }
 
-function correctInput() {
-    if (formAuthorization.inputName.value.trim() === '') {
-        buttonAutho.className = ''
-        buttonAutho.classList.add('buttonPassiv')
-        perrorButton.textContent = 'Заполните поле'
-        perrorButton.style.color = 'red'
-    } else {
-        buttonAutho.className = ''
-        buttonAutho.classList.add('buttonActive')
-    }
-}
-
 function createAppAuthorization() {
     const containerAuthorization = document.getElementById('authorization')
 
@@ -68,9 +56,10 @@ function createAppAuthorization() {
         }
     })
 
-    buttonAutho.addEventListener('click', (even) => {
-        event.preventDefault()
+    buttonAutho.addEventListener('click', (e) => {
+        e.preventDefault()
         if (inputName.value.trim() !== '') {
+            localStorage.setItem('username', inputName.value.trim())
             window.location.href = 'testWndow.html'
         }
     })
