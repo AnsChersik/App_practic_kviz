@@ -1,6 +1,6 @@
-const containerResult = document.getElementById('result')
 
 function createAppResult() {
+    const containerResult = document.getElementById('result')
     const userAnswers = JSON.parse(localStorage.getItem('userAns')) || []
     const userName = localStorage.getItem('username') || 'Анонимный пользователь'
     let countCorrect = 0

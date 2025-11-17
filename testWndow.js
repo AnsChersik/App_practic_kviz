@@ -1,3 +1,6 @@
+import { randomQuestion } from './modules/randomQuestion.js'
+
+
 let testsArray = [
     {
         id: 1,
@@ -72,12 +75,6 @@ const answersConteiner = document.getElementById('answersConteiner')
 const questionButton = document.getElementById('questionButton')
 const divquiz = document.getElementById('quiz')
 
-function randomQuestion(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]
-    }
-}
 
 function creatwQuestion() {
 
