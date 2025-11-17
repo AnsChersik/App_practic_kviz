@@ -26,6 +26,7 @@ function createAppResult() {
 
         const questionText = document.createElement('p')
         let numQuest = index + 1
+        questionText.classList.add('questionText')
         questionText.innerHTML = 'Вопрос ' + numQuest + ': ' + answer.question.question + '?'
         divQuestion.append(questionText)
 
@@ -43,6 +44,7 @@ function createAppResult() {
 
         const ansExplanation = document.createElement('p')
         ansExplanation.innerHTML = answer.question.explanation
+        ansExplanation.classList.add('Explanation')
         divQuestion.append(ansExplanation)
         containerResult.append(divQuestion)
     })

@@ -69,6 +69,15 @@ img {
     border: 5px solid rgb(11, 11, 48);
 }
 
+.Explanation {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.questionText{
+    font-weight: bolder;
+}
+
 #quiz h2 {
     margin-top: 0;
 }
