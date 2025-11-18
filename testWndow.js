@@ -5,7 +5,7 @@ let testsArray = [
     {
         id: 1,
         question: 'Сколько планет в Солнечной системене',
-        image: '/photoes/photoes_first_ques.jpg',
+        image: './photoes/photoes_first_ques.jpg',
         answers: [
             { text: 6, correct: false, explantion: 'Неверно' },
             { text: 8, correct: true, explantion: 'Верно' },
@@ -17,7 +17,7 @@ let testsArray = [
     {
         id: 2,
         question: 'Какая планета самая большая в Солнечной системе',
-        image: '/photoes/photoes_twice_ques.jpg',
+        image: './photoes/photoes_twice_ques.jpg',
         answers: [
             { text: 'Венера', correct: false, explantion: 'Неверно' },
             { text: 'Сатурн', correct: false, explantion: 'Неверно' },
@@ -29,7 +29,7 @@ let testsArray = [
     {
         id: 3,
         question: 'Сколько спутников у Сатурна',
-        image: '/photoes/photoes_thrith_ques.jpg',
+        image: './photoes/photoes_thrith_ques.jpg',
         answers: [
             { text: '274', correct: true, explantion: 'Верно' },
             { text: '56', correct: false, explantion: 'Неверно' },
@@ -41,7 +41,7 @@ let testsArray = [
     {
         id: 4,
         question: 'Какая планета не входит в Солнечную систмеу',
-        image: '/photoes/photoes_four_ques.jpg',
+        image: './photoes/photoes_four_ques.jpg',
         answers: [
             { text: 'Плутон', correct: true, explantion: 'Верно' },
             { text: 'Венера', correct: false, explantion: 'Неверно' },
@@ -53,7 +53,7 @@ let testsArray = [
     {
         id: 5,
         question: 'В чем измеряется расстояние в космосе',
-        image: '/photoes/photoes_five_ques.jpg',
+        image: './photoes/photoes_five_ques.jpg',
         answers: [
             { text: 'Километры', correct: false, explantion: 'Неверно' },
             { text: 'Метры', correct: false, explantion: 'Неверно' },
